@@ -3,12 +3,38 @@ import styled from "styled-components";
 export const Container = styled.div`
   max-width: 700px;
   margin: auto;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
+  padding: 0 20px;
+
+  @media (max-width: 767px) {
+    max-width: 600px;
+  }
+
+  @media (max-width: 576px) {
+    max-width: 520px;
+  }
 
   h2 {
     text-align: center;
   }
 
+  ul {
+    list-style: none;
+    padding: 0;
+    overflow-y: scroll;
+    max-height: 400px;
+  }
+
+  li {
+    padding: 5px 0;
+    border-bottom: 1px solid;
+    text-transform: capitalize;
+    cursor: pointer;
+  }
+`;
+
+export const InputContainer = styled.div`
+  margin-top: 30px;
   input {
     width: 100%;
     padding: 10px;
@@ -24,27 +50,27 @@ export const Container = styled.div`
     border: none;
 
     :focus {
-        outline: none;
+      outline: none;
     }
   }
 
-  ul {
-    list-style: none;
-    padding: 0;
-    overflow-y: scroll;
-    max-height: 400px;
+  button.not_visable {
+    transform: translateY(-50%) rotate(180deg);
+  }
+`;
 
-    /* ::-webkit-scrollbar { */
-      /* width: 0px; */
-      /* background: transparent; */
-    /* } */
-
+export const DestaquesContainer = styled.div`
+  > div {
+    display: flex;
   }
 
-  li {
-    padding: 5px 0;
-    border-bottom: 1px solid;
-    text-transform: capitalize;
-    cursor: pointer;
+  h3 {
+    text-align: center;
+  }
+
+  @media (max-width: 767px) {
+    > div {
+      overflow-x: scroll;
+    }
   }
 `;

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import api from "../../services/api";
-import { useHistory, useParams, Link } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 
 import { Container, PokeInfo, LeftContent, RightContent } from "./styles";
@@ -29,7 +29,6 @@ const Profile: React.FC = () => {
   const [poke, setPoke] = useState<Poke>({} as Poke);
   const [loading, setLoading] = useState(true);
   const [pokeFront, setPokeFront] = useState(true);
-  const history = useHistory();
   let { id } = useParams<ParamTypes>();
 
   useEffect(() => {
@@ -42,7 +41,6 @@ const Profile: React.FC = () => {
     fetchData();
   }, []);
 
-
   if (loading) {
     return <></>;
   }
@@ -54,10 +52,12 @@ const Profile: React.FC = () => {
       </Link>
       <PokeInfo>
         <LeftContent>
-        <img src={pokeFront ? poke.sprites.front_default: poke.sprites.back_default} />
-        <button onClick={() => setPokeFront(!pokeFront)}>
-          Girar 180º
-        </button>
+          <img
+            src={
+              pokeFront ? poke.sprites.front_default : poke.sprites.back_default
+            }
+          />
+          <button onClick={() => setPokeFront(!pokeFront)}>Girar 180º</button>
         </LeftContent>
         <RightContent>
           <h2>{poke.name}</h2>
