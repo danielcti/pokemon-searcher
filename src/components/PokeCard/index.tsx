@@ -16,7 +16,7 @@ const PokeCard: React.FC<ChildComponentProps> = (props) => {
     <Link to={`/${props.id}`}>
       <Container>
         <h3>{props.name}</h3>
-        <img src={props.sprites.front_default} />
+        <img src={props.sprites.front_default} alt="poke_avatar"/>
       </Container>
     </Link>
   );

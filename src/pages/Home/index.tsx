@@ -71,16 +71,19 @@ const Home: React.FC = () => {
           placeholder="Digite o nome do pokemon"
           onChange={handleInputChange}
           value={input}
+          data-testid="input"
         />
         <button
           onClick={handleButtonClick}
-          className={listVisible ? "visible" : "not_visable"}
+          className={listVisible ? "seta visible" : "seta not_visable"}
+          name='setVisibility'
+          role='button'
         >
           <FaArrowUp />
         </button>
       </InputContainer>
       {listVisible && (
-        <ul>
+        <ul data-testid="pokemon-list">
           {pokeListVisible.length > 0 &&
             pokeListVisible.map((poke) => (
               <li key={poke.url} onClick={() => handlePokeClick(poke.url)}>
