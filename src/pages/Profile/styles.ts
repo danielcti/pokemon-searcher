@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { darken, lighten } from 'polished';
 
 export const Container = styled.div`
   margin: auto;
@@ -19,6 +20,11 @@ export const Container = styled.div`
     text-decoration: none;
     display: flex;
     align-items: center;
+    transition: all .3s;
+
+    :hover {
+      color: ${lighten(0.3, '#000')};
+    }
 
     svg {
       margin-right: 7px;
@@ -46,7 +52,18 @@ export const LeftContent = styled.div`
   button {
     width: fit-content;
     margin: 10px auto;
+    border: none;
+    background: #475ecc;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 5px;
+    transition: all .3s;
+
+    :hover {
+      background: ${darken(0.2, '#475ecc')}
+    }
   }
+
 
   @media (max-width: 767px) {
     margin: auto;
@@ -72,3 +89,11 @@ export const RightContent = styled.div`
     text-transform: capitalize;
   }
 `;
+
+export const PokesRelacionados = styled.div`
+
+div {
+  display: flex;
+}
+
+`

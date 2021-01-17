@@ -26,10 +26,17 @@ export const Container = styled.div`
   }
 
   li {
-    padding: 5px 0;
+    padding: 5px 5px;
     border-bottom: 1px solid;
     text-transform: capitalize;
     cursor: pointer;
+    transition: all .3s;
+
+    :hover {
+      background: #ddd;
+      font-weight: bold;
+    }
+
   }
 `;
 
@@ -74,3 +81,13 @@ export const DestaquesContainer = styled.div`
     }
   }
 `;
+
+export const OrderButtonsDiv = styled.div`
+display: flex;
+margin: 15px auto;
+width: fit-content;
+
+button {
+  margin: 0 10px;
+}
+`

@@ -4,13 +4,14 @@ import { FaArrowUp } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import PokeCard from "../../components/PokeCard";
 
-import { Container, InputContainer, DestaquesContainer } from "./styles";
+import { Container, InputContainer, DestaquesContainer, OrderButtonsDiv } from "./styles";
+import { render } from "@testing-library/react";
 
 const Home: React.FC = () => {
   const [pokeList, setPokeList] = useState<any[]>([]);
   const [pokeListVisible, setPokeListVisible] = useState<any[]>([]);
   const [pokeDestaqueList, setPokeDestaqueList] = useState<any[]>([]);
-  const [listVisible, setListVisible] = useState(true);
+  const [listVisible, setListVisible] = useState(false);
   const [input, setInput] = useState("");
   const history = useHistory();
 
@@ -32,7 +33,7 @@ const Home: React.FC = () => {
     async function getRandomPokes() {
       const destaques = [];
       for (let i = 0; i < 4; i++) {
-        const rand = String(Math.floor(Math.random() * 99 + 1));
+        const rand = String(Math.floor(Math.random() * 200 + 1));
         const { data } = await api.get(`/pokemon/${rand}`);
         destaques.push(data);
       }
@@ -47,13 +48,25 @@ const Home: React.FC = () => {
 
   function handleInputChange(e: React.ChangeEvent<HTMLInputElement>) {
     setInput(e.target.value);
-    const filteredArray = pokeList.filter((element) =>
+    let filteredArray = pokeList.filter((element) =>
       element.name.includes(e.target.value.toLowerCase())
     );
     setPokeListVisible(filteredArray);
     if (e.target.value !== "") {
       setListVisible(true);
     }
+  }
+
+  function sortDec(){
+    const copy = [...pokeListVisible];
+    const sortArray = copy.sort((a, b) => b.name.localeCompare(a.name))
+    setPokeListVisible(sortArray);
+  }
+
+  function sortInc(){
+    const copy = [...pokeListVisible];
+    const sortArray = copy.sort((a, b) => a.name.localeCompare(b.name))
+    setPokeListVisible(sortArray);
   }
 
   return (
@@ -82,6 +95,10 @@ const Home: React.FC = () => {
           <FaArrowUp />
         </button>
       </InputContainer>
+      <OrderButtonsDiv>
+        <button onClick={sortInc}>A-Z</button>
+        <button onClick={sortDec}>Z-A</button>
+      </OrderButtonsDiv>
       {listVisible && (
         <ul data-testid="pokemon-list">
           {pokeListVisible.length > 0 &&

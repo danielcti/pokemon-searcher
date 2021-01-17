@@ -12,5 +12,6 @@ export const Container = styled.div`
 
   h3 {
     text-transform: capitalize;
+    color: black;
   }
 `;
