@@ -81,7 +81,7 @@ const Home: React.FC = () => {
         <h3>Pokemons em destaque</h3>
         <div>
           {pokeDestaqueList.length > 0 &&
-            pokeDestaqueList.map((poke) => <PokeCard {...poke} />)}
+            pokeDestaqueList.map((poke,i) => <PokeCard key={i} {...poke} />)}
         </div>
       </DestaquesContainer>
       <InputContainer style={{ position: "relative" }}>
@@ -95,7 +95,6 @@ const Home: React.FC = () => {
           onClick={handleButtonClick}
           className={listVisible ? "seta visible" : "seta not_visable"}
           name='setVisibility'
-          role='button'
           data-testid="setVisibility"
         >
           <FaArrowUp />
