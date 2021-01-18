@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { darken, lighten } from 'polished';
+import { darken, lighten } from "polished";
 
 export const Container = styled.div`
   margin: auto;
@@ -20,10 +20,10 @@ export const Container = styled.div`
     text-decoration: none;
     display: flex;
     align-items: center;
-    transition: all .3s;
+    transition: all 0.3s;
 
     :hover {
-      color: ${lighten(0.3, '#000')};
+      color: ${lighten(0.3, "#000")};
     }
 
     svg {
@@ -57,13 +57,12 @@ export const LeftContent = styled.div`
     color: #fff;
     padding: 8px 20px;
     border-radius: 5px;
-    transition: all .3s;
+    transition: all 0.3s;
 
     :hover {
-      background: ${darken(0.2, '#475ecc')}
+      background: ${darken(0.2, "#475ecc")};
     }
   }
-
 
   @media (max-width: 767px) {
     margin: auto;

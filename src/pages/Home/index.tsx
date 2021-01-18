@@ -4,7 +4,12 @@ import { FaArrowUp } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import PokeCard from "../../components/PokeCard";
 
-import { Container, InputContainer, DestaquesContainer, OrderButtonsDiv } from "./styles";
+import {
+  Container,
+  InputContainer,
+  DestaquesContainer,
+  OrderButtonsDiv,
+} from "./styles";
 
 const Home: React.FC = () => {
   const [pokeList, setPokeList] = useState<any[]>([]);
@@ -15,7 +20,7 @@ const Home: React.FC = () => {
   const history = useHistory();
 
   function handlePokeClick(url: string) {
-    const id = url.split("pokemon")[1].replace('/','');
+    const id = url.split("pokemon")[1].replace("/", "");
     history.push(`/${id}`);
   }
 
@@ -56,21 +61,21 @@ const Home: React.FC = () => {
     }
   }
 
-  function sortDec(){
+  function sortDec() {
     const copy = [...pokeListVisible];
-    const sortArray = copy.sort((a, b) => b.name.localeCompare(a.name))
+    const sortArray = copy.sort((a, b) => b.name.localeCompare(a.name));
     setPokeListVisible(sortArray);
     const copy1 = [...pokeList];
-    const sortArray1 = copy1.sort((a, b) => b.name.localeCompare(a.name))
+    const sortArray1 = copy1.sort((a, b) => b.name.localeCompare(a.name));
     setPokeList(sortArray1);
   }
 
-  function sortInc(){
+  function sortInc() {
     const copy = [...pokeListVisible];
-    const sortArray = copy.sort((a, b) => a.name.localeCompare(b.name))
+    const sortArray = copy.sort((a, b) => a.name.localeCompare(b.name));
     setPokeListVisible(sortArray);
     const copy1 = [...pokeList];
-    const sortArray1 = copy1.sort((a, b) => a.name.localeCompare(b.name))
+    const sortArray1 = copy1.sort((a, b) => a.name.localeCompare(b.name));
     setPokeList(sortArray1);
   }
 
@@ -81,7 +86,7 @@ const Home: React.FC = () => {
         <h3>Pokemons em destaque</h3>
         <div>
           {pokeDestaqueList.length > 0 &&
-            pokeDestaqueList.map((poke,i) => <PokeCard key={i} {...poke} />)}
+            pokeDestaqueList.map((poke, i) => <PokeCard key={i} {...poke} />)}
         </div>
       </DestaquesContainer>
       <InputContainer style={{ position: "relative" }}>
@@ -94,7 +99,7 @@ const Home: React.FC = () => {
         <button
           onClick={handleButtonClick}
           className={listVisible ? "seta visible" : "seta not_visable"}
-          name='setVisibility'
+          name="setVisibility"
           data-testid="setVisibility"
         >
           <FaArrowUp />

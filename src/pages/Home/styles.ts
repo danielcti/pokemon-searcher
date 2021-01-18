@@ -30,13 +30,12 @@ export const Container = styled.div`
     border-bottom: 1px solid;
     text-transform: capitalize;
     cursor: pointer;
-    transition: all .3s;
+    transition: all 0.3s;
 
     :hover {
       background: #ddd;
       font-weight: bold;
     }
-
   }
 `;
 
@@ -83,11 +82,11 @@ export const DestaquesContainer = styled.div`
 `;
 
 export const OrderButtonsDiv = styled.div`
-display: flex;
-margin: 15px auto;
-width: fit-content;
+  display: flex;
+  margin: 15px auto;
+  width: fit-content;
 
-button {
-  margin: 0 10px;
-}
-`
+  button {
+    margin: 0 10px;
+  }
+`;
