@@ -5,7 +5,6 @@ import { useHistory } from "react-router-dom";
 import PokeCard from "../../components/PokeCard";
 
 import { Container, InputContainer, DestaquesContainer, OrderButtonsDiv } from "./styles";
-import { render } from "@testing-library/react";
 
 const Home: React.FC = () => {
   const [pokeList, setPokeList] = useState<any[]>([]);
@@ -62,7 +61,7 @@ const Home: React.FC = () => {
     const sortArray = copy.sort((a, b) => b.name.localeCompare(a.name))
     setPokeListVisible(sortArray);
     const copy1 = [...pokeList];
-    const sortArray1 = copy.sort((a, b) => b.name.localeCompare(a.name))
+    const sortArray1 = copy1.sort((a, b) => b.name.localeCompare(a.name))
     setPokeList(sortArray1);
   }
 
@@ -70,6 +69,9 @@ const Home: React.FC = () => {
     const copy = [...pokeListVisible];
     const sortArray = copy.sort((a, b) => a.name.localeCompare(b.name))
     setPokeListVisible(sortArray);
+    const copy1 = [...pokeList];
+    const sortArray1 = copy1.sort((a, b) => a.name.localeCompare(b.name))
+    setPokeList(sortArray1);
   }
 
   return (
