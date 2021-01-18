@@ -3,7 +3,6 @@ import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import PokeCard from "./components/PokeCard";
 import { BrowserRouter } from "react-router-dom";
 import Home from "./pages/Home";
-import Profile from "./pages/Profile";
 
 test("renders a pokemon card", () => {
   render(

@@ -10,7 +10,7 @@ const Home: React.FC = () => {
   const [pokeList, setPokeList] = useState<any[]>([]);
   const [pokeListVisible, setPokeListVisible] = useState<any[]>([]);
   const [pokeDestaqueList, setPokeDestaqueList] = useState<any[]>([]);
-  const [listVisible, setListVisible] = useState(false);
+  const [listVisible, setListVisible] = useState(true);
   const [input, setInput] = useState("");
   const history = useHistory();
 
@@ -96,6 +96,7 @@ const Home: React.FC = () => {
           className={listVisible ? "seta visible" : "seta not_visable"}
           name='setVisibility'
           role='button'
+          data-testid="setVisibility"
         >
           <FaArrowUp />
         </button>

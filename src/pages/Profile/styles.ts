@@ -89,11 +89,3 @@ export const RightContent = styled.div`
     text-transform: capitalize;
   }
 `;
-
-export const PokesRelacionados = styled.div`
-
-div {
-  display: flex;
-}
-
-`
