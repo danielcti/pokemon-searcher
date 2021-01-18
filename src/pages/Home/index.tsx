@@ -16,7 +16,7 @@ const Home: React.FC = () => {
   const history = useHistory();
 
   function handlePokeClick(url: string) {
-    const id = url.split("pokemon")[1].replaceAll("/", "");
+    const id = url.split("pokemon")[1].replace('/','');
     history.push(`/${id}`);
   }
 
@@ -61,6 +61,9 @@ const Home: React.FC = () => {
     const copy = [...pokeListVisible];
     const sortArray = copy.sort((a, b) => b.name.localeCompare(a.name))
     setPokeListVisible(sortArray);
+    const copy1 = [...pokeList];
+    const sortArray1 = copy.sort((a, b) => b.name.localeCompare(a.name))
+    setPokeList(sortArray1);
   }
 
   function sortInc(){
