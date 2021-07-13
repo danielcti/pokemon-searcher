@@ -70,9 +70,6 @@ Distributed under the MIT License.
 
 Daniel Cavalcanti - dpc2@cin.ufpe.br
 
-Project Link: [https://github.com/danielcti/random-actor-quiz](https://github.com/danielcti/pokemon-searcher)
-
-
 
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
